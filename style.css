@@ -25,8 +25,8 @@ padding-top: 10vh;
     background-color: rgb(176, 207, 207);
     font-size: 1.25rem;
     width: 30vw;
-    height: 25vw;
-    padding: 30px;
+    height: 30vw;
+    padding: 20px;
     margin: 10px;
     border-radius: 15px;
 }
@@ -36,6 +36,39 @@ padding-top: 10vh;
     justify-content: center;
 }
 
-#newBookButton {
+#newFormContainer {
+    display: flex;
+    justify-content: center;
+}
 
+#newForm {
+    background-color: rgb(219, 229, 230);
+    width: 40vw;
+    height: 40vw;
+    border-radius: 15px;
+}
+
+#newForm div {
+    padding-top: 10px;
+}
+
+#newFormTitle {
+    display: flex;
+    justify-content: center;
+}
+
+#newFormtitleContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#newFormCheckBoxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#newFormbuttonContainer {
+    display: flex;
+    justify-content: center;
 }
