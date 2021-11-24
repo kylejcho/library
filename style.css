@@ -13,11 +13,25 @@ header {
 }
 
 main {
-
+padding-top: 10vh;
 }
 
+.bookCardContainer {
+    display: flex;
+    justify-content: center;
+}
 
-.book {
+.bookCard {
+    background-color: rgb(176, 207, 207);
+    font-size: 1.25rem;
+    width: 30vw;
+    height: 25vw;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.bookCard p {
     display: flex;
     justify-content: center;
 }
