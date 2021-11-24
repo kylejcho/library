@@ -4,7 +4,11 @@ const bookCardsList = document.querySelector('.bookCardContainer');
 const newBookButton = document.querySelector('#newBookButton')
 const addButton = document.querySelector('#addButton')
 const inputTitle = document.querySelector('#inputTitle');
-const book1 = new Book("Animal Farm", "George Orwell", 215, "Yes");
+const inputAuthor = document.querySelector('#inputAuthor');
+const inputPages = document.querySelector('#inputPages');
+const inputCheckbox = document.querySelector('#inputcheckbox');
+
+//const book1 = new Book("Animal Farm", "George Orwell", 215, "Yes");
 //const book2 = new Book("Harry Potter", "J. K. Rowling", 215, "No");
 
 function Book(title, author, pages, isRead) {
@@ -18,12 +22,15 @@ function Book(title, author, pages, isRead) {
 
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
+    console.log(newBook)
+    console.log(myLibrary)
+    showMyLibrary();
 }
 
-addBookToLibrary(book1);
+//addBookToLibrary(book1);
 //addBookToLibrary(book2);
 
-const showMyLibrary = myLibrary.map(book => {
+const showMyLibrary = () => myLibrary.map(book => {
     let newCard = document.createElement("div");
     newCard.className = "bookCard";
     bookCardsList.append(newCard);
@@ -40,5 +47,7 @@ function addCardElement(newCard, info) {
 
 
 addButton.onclick = () => {
-    
+    let newBook = new Book(inputTitle.value, inputAuthor.value, inputPages.value, "yes");
+    addBookToLibrary(newBook);
 }
+
