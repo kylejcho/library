@@ -16,7 +16,7 @@ function Book(title, author, pages, isRead) {
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
-    this.info = ['"'+ title +'"', author, pages +" pages", "Read: " + isRead];
+    this.info = [title, author, pages +" pages", "Read: " + isRead];
     
 }
 

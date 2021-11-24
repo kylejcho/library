@@ -2,7 +2,9 @@
 
 * {
     font-family: "Poppins";
-    color: rgb(44, 44, 44);
+    color: rgb(73, 73, 73);
+    background-color: #ffffff;
+    margin: 0;
 }
 
 header {
@@ -22,13 +24,23 @@ padding-top: 10vh;
 }
 
 .bookCard {
-    background-color: rgb(176, 207, 207);
-    font-size: 1.25rem;
+    background-color: rgb(255, 255, 255);
     width: 30vw;
-    height: 30vw;
+    height: 20vw;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
     margin: 10px;
-    border-radius: 15px;
+}
+
+.bookCard :first-child {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.bookCard :nth-child(2) {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .bookCard p {
@@ -41,15 +53,21 @@ padding-top: 10vh;
     justify-content: center;
 }
 
+#newFormTitle {
+
+}
+
 #newForm {
-    background-color: rgb(219, 229, 230);
+
     width: 40vw;
     height: 40vw;
     border-radius: 15px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
 }
 
 #newForm div {
     padding-top: 10px;
+
 }
 
 #newFormTitle {
