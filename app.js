@@ -47,6 +47,7 @@ function addCardElement(newCard, info) {
 
 
 addButton.onclick = () => {
+    myLibrary.pop();
     let newBook = new Book(inputTitle.value, inputAuthor.value, inputPages.value, "yes");
     addBookToLibrary(newBook);
 }
