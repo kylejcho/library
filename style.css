@@ -12,15 +12,18 @@ header {
     justify-content: center;
     font-size: 2rem;
     font-weight: 500;
+    height: 10vh;
 }
 
 main {
-padding-top: 10vh;
+    padding-top: 10vh;
+    height: 80vh;
 }
 
 .bookCardContainer {
     display: flex;
     justify-content: center;
+    
 }
 
 .bookCard {
@@ -52,22 +55,20 @@ padding-top: 10vh;
 #newFormContainer {
     display: flex;
     justify-content: center;
+    background-color: cadetblue;
+    height: 100%;
 }
 
 #newForm {
-    position: absolute;
     visibility: hidden;
-    width: 40vw;
-    height: 50vw;
+    width: 300px;
+    height: 300px;
     border-radius: 15px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
-    z-index: 3;
+    padding-top: 20px;
+    
 }
 
-#newForm div {
-    padding-top: 10px;
-
-}
 
 #newFormTitle {
     display: flex;
@@ -76,13 +77,15 @@ padding-top: 10vh;
     font-weight: 500;
 }
 
-#newForm div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#inputContainer {
+
+    background-color: cadetblue;
+    width: 180px;
+
 }
 
 .input {
+    margin-top: 10px;
     border: 1.5px rgb(221, 221, 221) solid;
     padding: 5px;
     border-radius: 3px;
@@ -90,9 +93,15 @@ padding-top: 10vh;
 
 
 #newBookButton {
-
-    border: white 1px solid;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border: cadetblue 1px solid;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 50px;
+    background-color: cadetblue;
+    color: white;
+    font-size: 2rem;
 }
