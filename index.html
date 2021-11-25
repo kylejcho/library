@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Library</header>
+    <header>My Library</header>
     <main>
         <div class="bookCardContainer"></div>
-        <button id = "newBookButton">NEW BOOK</button>
         <div id="newFormContainer">
             <div id="newForm">
-                <p id="newFormTitle">Add New Book</p>
+                <p id="newFormTitle">Add Book</p>
                 <div id="newFormtitleContainer">
-                    <input id = "inputTitle" type="text" placeHolder = "Title" required>
+                    <input class = "input" id = "inputTitle" type="text" placeHolder = "Title" required>
                 </div>
-                <div id="newFormtitleContainer">
-                    <input id = "inputAuthor" type="text" placeHolder = "Author" required>
+                <div id="newFormAuthorContainer">
+                    <input class = "input" id = "inputAuthor" type="text" placeHolder = "Author" required>
                 </div>
-                <div id="newFormtitleContainer">
-                    <input id = "inputPages" type="number" placeHolder = "pages" required>
+                <div id="newFormYearContainer">
+                    <input class = "input" id = "inputYear" type="number" placeHolder = "Year" required>
+                </div>
+                <div id="newFormPagesContainer">
+                    <input class = "input" id = "inputPages" type="number" placeHolder = "Pages" required>
                 </div>
                 <div id="newFormCheckBoxContainer">
                     <div id = "checkBoxQuestion">Has it been read?</div>
@@ -34,6 +36,7 @@
             </div>
         </div>
     </main>
+    <button id = "newBookButton">Add book</button>
     <footer></footer>
 </body>
 <script src="app.js"></script>

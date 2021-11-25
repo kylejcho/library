@@ -34,12 +34,13 @@ padding-top: 10vh;
 }
 
 .bookCard :first-child {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: black;
 }
 
 .bookCard :nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 500;
 }
 
@@ -53,16 +54,14 @@ padding-top: 10vh;
     justify-content: center;
 }
 
-#newFormTitle {
-
-}
-
 #newForm {
-
+    position: absolute;
+    visibility: hidden;
     width: 40vw;
-    height: 40vw;
+    height: 50vw;
     border-radius: 15px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
+    z-index: 3;
 }
 
 #newForm div {
@@ -73,20 +72,27 @@ padding-top: 10vh;
 #newFormTitle {
     display: flex;
     justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
-#newFormtitleContainer {
-    display: flex;
-    justify-content: center;
-}
-
-#newFormCheckBoxContainer {
+#newForm div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#newFormbuttonContainer {
-    display: flex;
-    justify-content: center;
+.input {
+    border: 1.5px rgb(221, 221, 221) solid;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+
+#newBookButton {
+
+    border: white 1px solid;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 5px;
 }

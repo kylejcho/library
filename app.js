@@ -5,18 +5,20 @@ const newBookButton = document.querySelector('#newBookButton')
 const addButton = document.querySelector('#addButton')
 const inputTitle = document.querySelector('#inputTitle');
 const inputAuthor = document.querySelector('#inputAuthor');
+const inputYear = document.querySelector('#inputYear');
 const inputPages = document.querySelector('#inputPages');
 const inputCheckbox = document.querySelector('#inputcheckbox');
-
+const newForm = document.querySelector('#newForm');
 //const book1 = new Book("Animal Farm", "George Orwell", 215, "Yes");
 //const book2 = new Book("Harry Potter", "J. K. Rowling", 215, "No");
 
-function Book(title, author, pages, isRead) {
+function Book(title, author, year, pages, isRead) {
     this.title = title;
     this.author = author;
+    this.year = year;
     this.pages = pages;
     this.isRead = isRead;
-    this.info = [title, author, pages +" pages", "Read: " + isRead];
+    this.info = [title, author,  year , pages + " pg.", "Read: " + isRead];
     
 }
 
@@ -48,7 +50,10 @@ function addCardElement(newCard, info) {
 
 addButton.onclick = () => {
     myLibrary.pop();
-    let newBook = new Book(inputTitle.value, inputAuthor.value, inputPages.value, "yes");
+    let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, "yes");
     addBookToLibrary(newBook);
 }
 
+newBookButton.onclick = () => {
+    newForm.style.visibility = "visible";
+}
