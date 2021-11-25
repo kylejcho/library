@@ -55,7 +55,6 @@ main {
 #newFormContainer {
     display: flex;
     justify-content: center;
-    background-color: cadetblue;
     height: 100%;
 }
 
@@ -77,12 +76,7 @@ main {
     font-weight: 500;
 }
 
-#inputContainer {
 
-    background-color: cadetblue;
-    width: 180px;
-
-}
 
 .input {
     margin-top: 10px;

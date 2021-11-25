@@ -7,7 +7,7 @@ const inputTitle = document.querySelector('#inputTitle');
 const inputAuthor = document.querySelector('#inputAuthor');
 const inputYear = document.querySelector('#inputYear');
 const inputPages = document.querySelector('#inputPages');
-const inputCheckbox = document.querySelector('#inputcheckbox');
+const inputCheckBox = document.querySelector('#inputCheckBox');
 const newForm = document.querySelector('#newForm');
 
 function Book(title, author, year, pages, isRead) {
@@ -41,14 +41,25 @@ function addCardElement(newCard, info) {
     })
 }
 
-
 addButton.onclick = () => {
     myLibrary.pop();
-    let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, "yes");
+    let checked = "";
+    if (inputCheckBox.checked) {
+        checked = "yes";
+    } else {
+        checked = "no"
+    }
+    let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, checked);
     addBookToLibrary(newBook);
+    newForm.style.visibility = "hidden";
 }
 
 newBookButton.onclick = () => {
     newForm.style.visibility = "visible";
+    inputTitle.value = '';
+    inputAuthor.value = '';
+    inputYear.value = '';
+    inputPages.value = '';
+    inputCheckBox.checked = false;
 }
 
