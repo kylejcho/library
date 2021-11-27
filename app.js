@@ -62,4 +62,3 @@ newBookButton.onclick = () => {
     inputPages.value = '';
     inputCheckBox.checked = false;
 }
-

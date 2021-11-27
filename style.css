@@ -61,7 +61,7 @@ main {
 #newForm {
     visibility: hidden;
     width: 300px;
-    height: 300px;
+    height: 350px;
     border-radius: 15px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
     padding-top: 20px;
@@ -76,13 +76,40 @@ main {
     font-weight: 500;
 }
 
+#newForm div {
+    display: flex;
+    justify-content: center;
+}
 
 
-.input {
+input {
     margin-top: 10px;
     border: 1.5px rgb(221, 221, 221) solid;
     padding: 5px;
     border-radius: 3px;
+}
+
+#newFormCheckBoxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#checkBoxQuestion {
+    height: 30px;
+    width: 160px;
+
+}
+
+#inputCheckBox {
+    margin-bottom: 15px;
+}
+
+#addButton {
+    border: 2px solid rgb(141, 141, 141);
+    border-radius: 5px;
 }
 
 
