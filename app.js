@@ -43,6 +43,7 @@ function addCardElement(newCard, info) {
 
 addButton.onclick = () => {
     myLibrary.pop();
+    checkFormFilled();
     let checked = "";
     if (inputCheckBox.checked) {
         checked = "yes";
@@ -61,4 +62,11 @@ newBookButton.onclick = () => {
     inputYear.value = '';
     inputPages.value = '';
     inputCheckBox.checked = false;
+}
+
+const checkFormFilled = () => {
+    if (inputTitle.value || inputAuthor.value || inputYear.value || inputPages.value) {
+        newForm.style.visibility = "hidden";
+        return
+    }
 }
