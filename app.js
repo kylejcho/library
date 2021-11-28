@@ -42,31 +42,28 @@ function addCardElement(newCard, info) {
 }
 
 addButton.onclick = () => {
-    myLibrary.pop();
-    checkFormFilled();
-    let checked = "";
-    if (inputCheckBox.checked) {
-        checked = "yes";
+    if (inputTitle.value && inputAuthor.value && inputYear.value && inputPages.value) {
+        myLibrary.pop();
+        let checked = "";
+        if (inputCheckBox.checked) {
+            checked = "yes";
+        } else {
+            checked = "no";
+        }
+        let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, checked);
+        addBookToLibrary(newBook);
+        newForm.style.visibility = "hidden";
     } else {
-        checked = "no"
+        return;
     }
-    let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, checked);
-    addBookToLibrary(newBook);
-    newForm.style.visibility = "hidden";
 }
 
 newBookButton.onclick = () => {
     newForm.style.visibility = "visible";
-    inputTitle.value = '';
-    inputAuthor.value = '';
-    inputYear.value = '';
-    inputPages.value = '';
+    inputTitle.value = null;
+    inputAuthor.value = null;
+    inputYear.value = null;
+    inputPages.value = null;
     inputCheckBox.checked = false;
 }
 
-const checkFormFilled = () => {
-    if (inputTitle.value || inputAuthor.value || inputYear.value || inputPages.value) {
-        newForm.style.visibility = "hidden";
-        return
-    }
-}
