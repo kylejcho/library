@@ -1,6 +1,6 @@
 let myLibrary = []
 
-const bookCardsList = document.querySelector('.bookCardContainer');
+const bookCardsList = document.querySelector('#bookCardContainer');
 const newBookButton = document.querySelector('#newBookButton')
 const addButton = document.querySelector('#addButton')
 const inputTitle = document.querySelector('#inputTitle');

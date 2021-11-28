@@ -21,19 +21,19 @@ main {
     height: 80vh;
 }
 
-.bookCardContainer {
-    display: flex;
-    justify-content: center;
-    
+#bookCardContainer {
+    width: 100%;
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat( 3, 1fr);    
 }
 
 .bookCard {
-    width: 30vw;
+    width: 20vw;
     height: 20vw;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
-    margin: 10px;
+    margin: 30px;
 }
 
 .bookCard :first-child {
@@ -66,7 +66,7 @@ main {
 }
 
 #form {
-    width: 50%;
+    width: 25%;
     height: 50%;
     border-radius: 5px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
@@ -136,9 +136,9 @@ input {
     width: 50px;
     height: 50px;
     border: cadetblue 1px solid;
-    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.4);
     border-radius: 50px;
-    background-color: cadetblue;
+    background-color: rgb(74, 158, 119);
     color: white;
     font-size: 2rem;
 }
