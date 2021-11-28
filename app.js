@@ -8,7 +8,7 @@ const inputAuthor = document.querySelector('#inputAuthor');
 const inputYear = document.querySelector('#inputYear');
 const inputPages = document.querySelector('#inputPages');
 const inputCheckBox = document.querySelector('#inputCheckBox');
-const newForm = document.querySelector('#newForm');
+const formContainer = document.querySelector('#formContainer');
 
 function Book(title, author, year, pages, isRead) {
     this.title = title;
@@ -52,14 +52,14 @@ addButton.onclick = () => {
         }
         let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, checked);
         addBookToLibrary(newBook);
-        newForm.style.visibility = "hidden";
+        formContainer.style.visibility = "hidden";
     } else {
         return;
     }
 }
 
 newBookButton.onclick = () => {
-    newForm.style.visibility = "visible";
+    formContainer.style.visibility = "visible";
     inputTitle.value = null;
     inputAuthor.value = null;
     inputYear.value = null;
