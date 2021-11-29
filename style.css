@@ -9,16 +9,44 @@
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    font-size: 3rem;
+    color: rgb(27, 27, 27);
+    font-size: 4rem;
     font-weight: 600;
     height: 10vh;
+    margin-left: 220px;
+    margin-right: 220px;
+    border-bottom: 2px rgb(82, 82, 82) solid;
 }
 
 main {
-    padding-top: 10vh;
     height: 80vh;
+}
+
+
+#newBookButtonContainer {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+
+#newBookButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    background-color: rgb(86, 182, 137);
+    color: white;
+    font-size: 2rem;
+    transition: ease-in-out 0.12s;
+}
+
+#newBookButton:hover {
+    transform: scale(1.2);
+    background-color: rgb(255, 255, 255);
+    color: rgb(86, 182, 137);
 }
 
 #bookCardContainer {
@@ -30,34 +58,49 @@ main {
 
 .bookCard {
     padding-bottom: 20px;
+    padding-left: 20px;
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
 }
 
-.bookCard :first-child {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.bookCard p {
+    padding: 1px;
+    color: rgb(93, 93, 93);
+    font-weight: 300;
+}
+
+.delete {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border: none;
+    color: rgb(82, 82, 82);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-left: 93%;
+}
+
+.delete:hover {
+    color: rgb(212, 85, 85);
+}
+
+.bookCard :nth-child(2) {
+    padding-top: 0;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-size: 2.25rem;
     font-weight: 600;
-    color: rgb(255, 255, 255);
-    background-color: cadetblue;
+    color: rgb(37, 37, 37);
 }
 
-.bookCard :nth-child(2) {
-    padding-top: 10px;
-    font-size: 1.25rem;
-    font-weight: 500;
+.bookCard :nth-child(3) {
 }
 
-.bookCard p {
-    color: rgb(39, 39, 39);
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-}
+
 
 #formContainer {
     visibility: hidden;
@@ -126,26 +169,16 @@ input {
 
 #addButton {
     border: 0;
-    background-color: rgb(74, 158, 119);
+    background-color: rgb(86, 182, 137);
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     font-size: 1.25rem;
     color: #edeef6;
     width: 75px;
     margin-top: 20px;
+    transition: ease-in-out 0.1s all;
 }
 
-
-#newBookButton {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    border: cadetblue 1px solid;
-    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.4);
-    border-radius: 50px;
-    background-color: rgb(74, 158, 119);
-    color: white;
-    font-size: 2rem;
+#addButton:hover {
+    background-color: rgb(89, 192, 144);
 }
