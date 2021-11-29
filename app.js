@@ -10,20 +10,18 @@ const inputPages = document.querySelector('#inputPages');
 const inputCheckBox = document.querySelector('#inputCheckBox');
 const formContainer = document.querySelector('#formContainer');
 
-
 function Book(title, author, year, pages, isRead) {
     this.title = title;
     this.author = author;
     this.year = year;
     this.pages = pages;
     this.isRead = isRead;
-    this.info = [title, "By: " + author, "Published: " + year , "Number of pages: " + pages, "Read: " + isRead];
+    this.info = [title, "By: " + author, "Published: " + year , "Number of pages: " + pages, isRead];
 }
 
-function addBookToLibrary(newBook) {
+const addBookToLibrary = (newBook) => {
     bookCardsList.innerHTML = '';
     myLibrary.push(newBook);
-    console.log(myLibrary)
     showMyLibrary();
 }
 
@@ -32,11 +30,19 @@ const showMyLibrary = () => myLibrary.map(book => {
     newCard.className = "bookCard";
     bookCardsList.append(newCard);
     addCardElement(newCard, book.info);
+
+    let e = document.createElement('button');
+    e.classList = "readToggle";
+    if (book.isRead == "no") {
+        toggleUnread(e)
+    } else {
+        toggleRead(e)
+    }
+    newCard.lastChild.remove();
+    newCard.append(e);
 })
 
-
-
-function addCardElement(newCard, info) {
+const addCardElement = (newCard, info) => {
     let a = document.createElement('button');
     a.classList = "delete";
     a.innerHTML = "×";
@@ -46,6 +52,18 @@ function addCardElement(newCard, info) {
         e.innerHTML = element;
         newCard.append(e)
     })
+    /*
+    let e = document.createElement('button');
+    e.classList = "readToggle";
+    if (newCard.lastChild.innerHTML == "no") {
+        toggleUnread(e)
+    } else {
+        toggleRead(e)
+    }
+    newCard.lastChild.remove();
+    newCard.append(e);
+    */
+    console.log(myLibrary);
 }
 
 addButton.onclick = () => {
@@ -73,25 +91,6 @@ newBookButton.onclick = () => {
     inputCheckBox.checked = false;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-let exampleBook1 = new Book("Animal Farm", "George Orwell", "1945", "345", "yes");
-let exampleBook2 = new Book("1984", "George Orwell", "1949", "323", "no");
-let exampleBook3 = new Book("Of Mice and Men", "John Steinbeck", "1937", "173", "no");
-addBookToLibrary(exampleBook1);
-addBookToLibrary(exampleBook2);
-addBookToLibrary(exampleBook3);
-
-
 const deleteButton = document.querySelectorAll('.delete');
 
 
@@ -106,4 +105,51 @@ document.onclick = (e) => {
         })
         div.remove();
     }
+    if (e.target.className == "readToggle") {
+        let div = e.target.parentNode;
+        let a = div.children[1].innerHTML;
+        myLibrary.forEach(book => {
+            if (book.title == a) {
+                if (book.isRead == "yes") {
+                    console.log("Currently read");
+                    book.isRead = "no";
+                    console.log("switch to: " + book.isRead);
+                    toggleUnread(e.target);
+                } else {
+                    console.log("Currently not read");
+                    book.isRead = "yes";
+                    console.log("switch to: " + book.isRead)
+                    toggleRead(e.target)
+                }
+            } 
+        })
+        console.log(myLibrary);
+    }
 }
+
+
+
+
+let toggleUnread = (e) => {
+   if (isRead = "no") {
+        e.style.border = "2px solid #d45555";
+        e.style.color = "#d45555"
+        e.innerHTML = "Not read"
+    }
+}
+
+
+
+let toggleRead = (e) => {
+   e.style.border = "2px solid #56b689";
+    e.style.color = "#56b689"
+    e.innerHTML = "Read"
+}
+
+
+let exampleBook1 = new Book("Animal Farm", "George Orwell", "1945", "345", "yes");
+let exampleBook2 = new Book("1984", "George Orwell", "1949", "323", "no");
+let exampleBook3 = new Book("Of Mice and Men", "John Steinbeck", "1937", "173", "no");
+addBookToLibrary(exampleBook1);
+addBookToLibrary(exampleBook2);
+addBookToLibrary(exampleBook3);
