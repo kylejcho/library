@@ -206,6 +206,7 @@ input {
     .bookCard p {
         font-size: clamp(0.25rem, 1.25vmax,1rem);
     }
+
     #form {
         width: clamp(300px, 40vmin, 1000px);
         height: clamp(200px, 40vmax, 400px);
@@ -241,6 +242,16 @@ input {
     }
     #bookCardContainer {
         padding-top: 10px;
+    }
+
+    .delete {
+        margin-top: 5px;
+        height: 15px;
+        width: 15px;
+        font-weight: 400;
+        font-size: 1.25rem;
+        margin-left: 90%;
+
     }
 }
 
