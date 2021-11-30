@@ -128,7 +128,7 @@ main {
 }
 
 #form {
-    width: 25%;
+    width: clamp(400px, 25vmax, 1000px);
     height: 50%;
     border-radius: 5px;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.2);
@@ -201,11 +201,50 @@ input {
         grid-template: repeat(1, 1fr)/repeat( 2, 1fr);
     }
     .bookCard :nth-child(2) {
-        font-size: clamp(0.1rem, 2.25vmax,2rem);
+        font-size: clamp(0.1rem, 2vmax,2rem);
     }
     .bookCard p {
         font-size: clamp(0.25rem, 1.25vmax,1rem);
     }
+    
+    #form {
+        width: clamp(300px, 40vmin, 1000px);
+        height: clamp(200px, 40vmax, 400px);
+        padding-top: 20px;
+    }
+    
+    #formTitle {
+        display: flex;
+        justify-content: center;
+        font-size: clamp(0.5rem, 3vmax,1.75rem);
+        font-weight: 600;
+    }
+    
+    #form div {
+        display: flex;
+        justify-content: center;
+    }
+    
+    input {
+        margin-top: 1rem;
+        padding: 3px;
+        font-size: clamp(0.5rem, 1.75vmax,1rem);
+    }
+    
+    #inputCheckBox {
+        margin-bottom: 15px;
+    }
+    
+    #addButton {
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+    
+    #addButton:hover {
+        background-color: rgb(89, 192, 144);
+    }
+    
+    
 }
 
 @media all and (max-width: 700px) {
