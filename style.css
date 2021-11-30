@@ -73,6 +73,7 @@ main {
     padding: 1px;
     color: rgb(80, 80, 80);
     font-weight: 300;
+    font-size: clamp(0.9rem, 1.25vmax,1rem);
 }
 
 .delete {
@@ -198,7 +199,12 @@ input {
 @media all and (max-width: 1050px) {
     #bookCardContainer {
         grid-template: repeat(1, 1fr)/repeat( 2, 1fr);
-
+    }
+    .bookCard :nth-child(2) {
+        font-size: clamp(0.1rem, 2.25vmax,2rem);
+    }
+    .bookCard p {
+        font-size: clamp(0.25rem, 1.25vmax,1rem);
     }
 }
 
@@ -206,9 +212,12 @@ input {
     #newBookButtonContainer {
         position: absolute;
         right: 4vmin;
-        bottom: 4vmin;
+        bottom: 7vmin;
         padding-top: 0;
         padding-bottom: 0;
+    }
+    #bookCardContainer {
+        padding-top: 10px;
     }
 }
 
