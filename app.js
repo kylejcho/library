@@ -39,11 +39,18 @@ createNewCard = () => {
 }
 
 const addCardElements = (newCard, info) => {
+    createDeleteButton(newCard);
+    displayBookProperties(info, newCard);
+}
+
+const createDeleteButton = (newCard) => {
     let deleteButton = document.createElement('button');
     deleteButton.classList = "delete";
     deleteButton.innerHTML = "×";
     newCard.append(deleteButton);
+}
 
+const displayBookProperties = (info, newCard) => {
     info.map(element => {
         let e = document.createElement('p');
         e.innerHTML = element;
@@ -89,7 +96,6 @@ newBookButton.addEventListener('click', function() {
 })
 
 const deleteButton = document.querySelectorAll('.delete');
-
 document.addEventListener('click', function(e) {
     if (e.target.innerHTML == '×') {
         deleteClick(e);
@@ -98,7 +104,6 @@ document.addEventListener('click', function(e) {
         readToggleClick(e);
     }
 })
-
 
 const deleteClick = (e) => {
     let div = e.target.parentNode;
