@@ -3,11 +3,11 @@ let myLibrary = [];
 const bookCardsList = document.querySelector('#bookCardContainer');
 const newBookButton = document.querySelector('#newBookButton')
 const addButton = document.querySelector('#addButton')
-const inputTitle = document.querySelector('#inputTitle');
-const inputAuthor = document.querySelector('#inputAuthor');
-const inputYear = document.querySelector('#inputYear');
-const inputPages = document.querySelector('#inputPages');
-const inputCheckBox = document.querySelector('#inputCheckBox');
+const title = document.querySelector('#inputTitle');
+const author = document.querySelector('#inputAuthor');
+const year = document.querySelector('#inputYear');
+const pages = document.querySelector('#inputPages');
+const checkBox = document.querySelector('#inputCheckBox');
 const formContainer = document.querySelector('#formContainer');
 
 function Book(title, author, year, pages, isRead) {
@@ -78,10 +78,10 @@ const toggleRead = (e) => {
 
 
 addButton.addEventListener('click', function() {
-    if (inputTitle.value && inputAuthor.value && inputYear.value && inputPages.value) {
+    if (title.value && author.value && year.value && pages.value) {
         let checked = readCheckBox();
 
-        let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, checked);
+        let newBook = new Book(title.value, author.value, year.value, pages.value, checked);
         addBookToLibrary(newBook);
 
         formContainer.style.visibility = "hidden";
@@ -92,18 +92,18 @@ addButton.addEventListener('click', function() {
 
 const readCheckBox = () => {
     let checked;
-    if (inputCheckBox.checked) checked = "yes";
+    if (checkBox.checked) checked = "yes";
     else checked = "no";
     return checked;
 }
 
 newBookButton.addEventListener('click', function() {
     formContainer.style.visibility = "visible";
-    inputTitle.value = null;
-    inputAuthor.value = null;
-    inputYear.value = null;
-    inputPages.value = null;
-    inputCheckBox.checked = false;
+    title.value = null;
+    author.value = null;
+    year.value = null;
+    pages.value = null;
+    checkBox.checked = false;
 })
 
 const deleteButton = document.querySelectorAll('.delete');
