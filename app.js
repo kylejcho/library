@@ -81,7 +81,6 @@ newBookButton.onclick = () => {
 
 const deleteButton = document.querySelectorAll('.delete');
 
-
 document.onclick = (e) => {
     if (e.target.innerHTML == '×') {
         let div = e.target.parentNode;
@@ -110,9 +109,6 @@ document.onclick = (e) => {
     }
 }
 
-
-
-
 let toggleUnread = (e) => {
    if (isRead = "no") {
         e.style.border = "2px solid #d45555";
@@ -121,14 +117,11 @@ let toggleUnread = (e) => {
     }
 }
 
-
-
 let toggleRead = (e) => {
    e.style.border = "2px solid #56b689";
     e.style.color = "#56b689"
     e.innerHTML = "Read"
 }
-
 
 let exampleBook1 = new Book("Animal Farm", "George Orwell", "1945", "345", "yes");
 let exampleBook2 = new Book("1984", "George Orwell", "1949", "323", "no");
