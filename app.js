@@ -63,20 +63,6 @@ const createReadToggle = (book, newCard) => {
     newCard.append(readToggle);
 }
 
-const toggleUnread = (e) => {
-    e.style.border = "2px solid #d45555";
-    e.style.color = "#d45555"
-    e.innerHTML = "Not read"
-}
-
-const toggleRead = (e) => {
-    e.style.border = "2px solid #56b689";
-    e.style.color = "#56b689"
-    e.innerHTML = "Read"
-}
-
-
-
 addButton.addEventListener('click', function() {
     if (title.value && author.value && year.value && pages.value) {
         let checked = readCheckBox();
@@ -142,6 +128,17 @@ const readToggleClick = (e) => {
             }
         } 
     })
+}
+
+const toggleUnread = (e) => {
+    e.style.border = "2px solid #d45555";
+    e.style.color = "#d45555"
+    e.innerHTML = "Not read"
+}
+const toggleRead = (e) => {
+    e.style.border = "2px solid #56b689";
+    e.style.color = "#56b689"
+    e.innerHTML = "Read"
 }
 
 //Example Books
