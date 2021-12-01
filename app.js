@@ -26,23 +26,19 @@ const addBookToLibrary = (newBook) => {
 }
 
 const showMyLibrary = () => myLibrary.map(book => {
-    let newCard = document.createElement("div");
-    newCard.className = "bookCard";
-    bookCardsList.append(newCard);
-    addCardElement(newCard, book.info);
-
-    let e = document.createElement('button');
-    e.classList = "readToggle";
-    if (book.isRead == "no") {
-        toggleUnread(e)
-    } else {
-        toggleRead(e)
-    }
-    newCard.lastChild.remove();
-    newCard.append(e);
+    let newCard = createNewCard();
+    addCardElements(newCard, book.info);
+    createReadToggle(book, newCard)
 })
 
-const addCardElement = (newCard, info) => {
+createNewCard = () => {
+    let card = document.createElement("div");
+    card.className = "bookCard";
+    bookCardsList.append(card);
+    return card;
+}
+
+const addCardElements = (newCard, info) => {
     let a = document.createElement('button');
     a.classList = "delete";
     a.innerHTML = "×";
@@ -54,7 +50,19 @@ const addCardElement = (newCard, info) => {
     })
 }
 
-addButton.onclick = () => {
+const createReadToggle = (book, newCard) => {
+    let e = document.createElement('button');
+    e.classList = "readToggle";
+    if (book.isRead == "no") {
+        toggleUnread(e)
+    } else {
+        toggleRead(e)
+    }
+    newCard.lastChild.remove();
+    newCard.append(e);
+}
+
+addButton.addEventListener('click', function() {
     if (inputTitle.value && inputAuthor.value && inputYear.value && inputPages.value) {
         let checked = "";
         if (inputCheckBox.checked) {
@@ -68,20 +76,20 @@ addButton.onclick = () => {
     } else {
         return;
     }
-}
+})
 
-newBookButton.onclick = () => {
+newBookButton.addEventListener('click', function() {
     formContainer.style.visibility = "visible";
     inputTitle.value = null;
     inputAuthor.value = null;
     inputYear.value = null;
     inputPages.value = null;
     inputCheckBox.checked = false;
-}
+})
 
 const deleteButton = document.querySelectorAll('.delete');
 
-document.onclick = (e) => {
+document.addEventListener('click', function(e) {
     if (e.target.innerHTML == '×') {
         let div = e.target.parentNode;
         let a = div.children[1].innerHTML;
@@ -107,25 +115,24 @@ document.onclick = (e) => {
             } 
         })
     }
-}
+})
 
 let toggleUnread = (e) => {
-   if (isRead = "no") {
-        e.style.border = "2px solid #d45555";
-        e.style.color = "#d45555"
-        e.innerHTML = "Not read"
-    }
+    e.style.border = "2px solid #d45555";
+    e.style.color = "#d45555"
+    e.innerHTML = "Not read"
 }
 
 let toggleRead = (e) => {
-   e.style.border = "2px solid #56b689";
+    e.style.border = "2px solid #56b689";
     e.style.color = "#56b689"
     e.innerHTML = "Read"
 }
 
-let exampleBook1 = new Book("Animal Farm", "George Orwell", "1945", "345", "yes");
-let exampleBook2 = new Book("1984", "George Orwell", "1949", "323", "no");
-let exampleBook3 = new Book("Of Mice and Men", "John Steinbeck", "1937", "173", "no");
-addBookToLibrary(exampleBook1);
-addBookToLibrary(exampleBook2);
-addBookToLibrary(exampleBook3);
+let example1 = new Book("Animal Farm", "George Orwell", "1945", "345", "yes");
+let example2 = new Book("1984", "George Orwell", "1949", "323", "no");
+let example3 = new Book("Of Mice and Men", "John Steinbeck", "1937", "173", "no");
+
+addBookToLibrary(example1);
+addBookToLibrary(example2);
+addBookToLibrary(example3);
