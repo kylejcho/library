@@ -26,7 +26,6 @@ main {
 
 
 #newBookButtonContainer {
-    height: 5vh;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -258,5 +257,14 @@ input {
 @media all and (max-width: 500px) {
     header {
         justify-content: center;
+    }
+    .delete {
+        margin-top: 5px;
+        height: 15px;
+        width: 15px;
+        font-weight: 400;
+        font-size: 1.25rem;
+        margin-left: 87%;
+
     }
 }

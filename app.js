@@ -52,18 +52,6 @@ const addCardElement = (newCard, info) => {
         e.innerHTML = element;
         newCard.append(e)
     })
-    /*
-    let e = document.createElement('button');
-    e.classList = "readToggle";
-    if (newCard.lastChild.innerHTML == "no") {
-        toggleUnread(e)
-    } else {
-        toggleRead(e)
-    }
-    newCard.lastChild.remove();
-    newCard.append(e);
-    */
-    console.log(myLibrary);
 }
 
 addButton.onclick = () => {
@@ -111,19 +99,14 @@ document.onclick = (e) => {
         myLibrary.forEach(book => {
             if (book.title == a) {
                 if (book.isRead == "yes") {
-                    console.log("Currently read");
                     book.isRead = "no";
-                    console.log("switch to: " + book.isRead);
                     toggleUnread(e.target);
                 } else {
-                    console.log("Currently not read");
                     book.isRead = "yes";
-                    console.log("switch to: " + book.isRead)
                     toggleRead(e.target)
                 }
             } 
         })
-        console.log(myLibrary);
     }
 }
 
