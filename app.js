@@ -39,10 +39,11 @@ createNewCard = () => {
 }
 
 const addCardElements = (newCard, info) => {
-    let a = document.createElement('button');
-    a.classList = "delete";
-    a.innerHTML = "×";
-    newCard.append(a);
+    let deleteButton = document.createElement('button');
+    deleteButton.classList = "delete";
+    deleteButton.innerHTML = "×";
+    newCard.append(deleteButton);
+
     info.map(element => {
         let e = document.createElement('p');
         e.innerHTML = element;
@@ -51,32 +52,50 @@ const addCardElements = (newCard, info) => {
 }
 
 const createReadToggle = (book, newCard) => {
-    let e = document.createElement('button');
-    e.classList = "readToggle";
+    let readToggle = document.createElement('button');
+    readToggle.classList = "readToggle";
     if (book.isRead == "no") {
-        toggleUnread(e)
+        toggleUnread(readToggle)
     } else {
-        toggleRead(e)
+        toggleRead(readToggle)
     }
     newCard.lastChild.remove();
-    newCard.append(e);
+    newCard.append(readToggle);
 }
+
+const toggleUnread = (e) => {
+    e.style.border = "2px solid #d45555";
+    e.style.color = "#d45555"
+    e.innerHTML = "Not read"
+}
+
+const toggleRead = (e) => {
+    e.style.border = "2px solid #56b689";
+    e.style.color = "#56b689"
+    e.innerHTML = "Read"
+}
+
+
 
 addButton.addEventListener('click', function() {
     if (inputTitle.value && inputAuthor.value && inputYear.value && inputPages.value) {
-        let checked = "";
-        if (inputCheckBox.checked) {
-            checked = "yes";
-        } else {
-            checked = "no";
-        }
+        let checked = readCheckBox();
+
         let newBook = new Book(inputTitle.value, inputAuthor.value, inputYear.value, inputPages.value, checked);
         addBookToLibrary(newBook);
+
         formContainer.style.visibility = "hidden";
     } else {
         return;
     }
 })
+
+const readCheckBox = () => {
+    let checked;
+    if (inputCheckBox.checked) checked = "yes";
+    else checked = "no";
+    return checked;
+}
 
 newBookButton.addEventListener('click', function() {
     formContainer.style.visibility = "visible";
@@ -91,44 +110,41 @@ const deleteButton = document.querySelectorAll('.delete');
 
 document.addEventListener('click', function(e) {
     if (e.target.innerHTML == '×') {
-        let div = e.target.parentNode;
-        let a = div.children[1].innerHTML;
-        myLibrary = myLibrary.filter(book => {
-            if (book.title !== a) {
-                return true;
-            }
-        })
-        div.remove();
+        deleteClick(e);
     }
-    if (e.target.className == "readToggle") {
-        let div = e.target.parentNode;
-        let a = div.children[1].innerHTML;
-        myLibrary.forEach(book => {
-            if (book.title == a) {
-                if (book.isRead == "yes") {
-                    book.isRead = "no";
-                    toggleUnread(e.target);
-                } else {
-                    book.isRead = "yes";
-                    toggleRead(e.target)
-                }
-            } 
-        })
+    else if (e.target.className == "readToggle") {
+        readToggleClick(e);
     }
 })
 
-let toggleUnread = (e) => {
-    e.style.border = "2px solid #d45555";
-    e.style.color = "#d45555"
-    e.innerHTML = "Not read"
+
+const deleteClick = (e) => {
+    let div = e.target.parentNode;
+    let a = div.children[1].innerHTML;
+    myLibrary = myLibrary.filter(book => {
+        if (book.title !== a) {
+            return true;
+        }
+    })
+    div.remove();
 }
 
-let toggleRead = (e) => {
-    e.style.border = "2px solid #56b689";
-    e.style.color = "#56b689"
-    e.innerHTML = "Read"
+const readToggleClick = (e) => {
+    let a = e.target.parentNode.children[1].innerHTML;
+    myLibrary.forEach(book => {
+        if (book.title == a) {
+            if (book.isRead == "yes") {
+                book.isRead = "no";
+                toggleUnread(e.target);
+            } else {
+                book.isRead = "yes";
+                toggleRead(e.target)
+            }
+        } 
+    })
 }
 
+//Example Books
 let example1 = new Book("Animal Farm", "George Orwell", "1945", "345", "yes");
 let example2 = new Book("1984", "George Orwell", "1949", "323", "no");
 let example3 = new Book("Of Mice and Men", "John Steinbeck", "1937", "173", "no");
