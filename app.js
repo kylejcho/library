@@ -66,14 +66,10 @@ const createReadToggle = (book, newCard) => {
 addButton.addEventListener('click', function() {
     if (title.value && author.value && year.value && pages.value) {
         let checked = readCheckBox();
-
         let newBook = new Book(title.value, author.value, year.value, pages.value, checked);
         addBookToLibrary(newBook);
-
         formContainer.style.visibility = "hidden";
-    } else {
-        return;
-    }
+    } else return;
 })
 
 const readCheckBox = () => {
