@@ -10,13 +10,15 @@ const pages = document.querySelector('#inputPages');
 const checkBox = document.querySelector('#inputCheckBox');
 const formContainer = document.querySelector('#formContainer');
 
-function Book(title, author, year, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-    this.pages = pages;
-    this.isRead = isRead;
-    this.info = [title, "By: " + author, "Published: " + year , "Number of pages: " + pages, isRead];
+class Book {
+    constructor(title, author, year, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.pages = pages;
+        this.isRead = isRead;
+        this.info = [title, "By: " + author, "Published: " + year , "Number of pages: " + pages, isRead];
+    }
 }
 
 const addBookToLibrary = (newBook) => {
